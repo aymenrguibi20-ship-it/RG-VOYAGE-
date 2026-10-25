@@ -1,51 +1,90 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101820">
 <title>RG VOYAGE | Valises Premium</title>
 <style>
-:root{--dark:#101820;--gold:#d6b36a;--cream:#f7f4ed}
+:root{--dark:#101820;--gold:#d6b36a;--cream:#f7f4ed;--accent:#c59b38}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--dark)}
-header{background:var(--dark);color:white;padding:22px 15px;text-align:center}
-.logo{font-size:30px;letter-spacing:5px;color:var(--gold);font-weight:800}
-header p{margin-bottom:0;color:#ddd}
-nav{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:15px;background:#192630}
-nav a{color:white;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(120deg,#101820,#34454e);color:white;text-align:center;padding:65px 18px}
-.hero h1{font-size:clamp(30px,6vw,48px);margin:0 0 15px}
-.hero p{line-height:1.8;color:#e6e6e6}
+body{margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:var(--cream);color:var(--dark)}
+header{background:var(--dark);color:white;padding:22px 15px;text-align:center;position:relative}
+.logo{font-size:32px;letter-spacing:6px;color:var(--gold);font-weight:900;text-transform:uppercase}
+header p{margin:5px 0 0;color:#ccc;font-size:14px}
+
+/* Dev Banner */
+.dev-banner{background:linear-gradient(90deg, #d6b36a, #e6c885);color:#101820;padding:8px;text-align:center;font-weight:bold;font-size:14px;display:none;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+
+nav{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;padding:12px 15px;background:#192630;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+nav a, .nav-btn{color:white;text-decoration:none;font-size:14px;background:none;border:none;cursor:pointer;font-family:inherit;padding:6px 12px;border-radius:4px;transition:0.3s}
+nav a:hover, .nav-btn:hover{background:var(--gold);color:var(--dark)}
+.auth-nav-btn{background:var(--gold)!important;color:var(--dark)!important;font-weight:bold}
+
+.hero{background:linear-gradient(135deg,#101820,#233442);color:white;text-align:center;padding:80px 20px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to top,var(--cream),transparent)}
+.hero h1{font-size:clamp(32px,6vw,52px);margin:0 0 15px;font-weight:800}
+.hero p{line-height:1.8;color:#d8d8d8;font-size:17px;max-width:600px;margin:0 auto 25px}
 .gold{color:var(--gold)}
-.btn{display:inline-block;background:var(--gold);color:#101820;text-decoration:none;font-weight:bold;padding:13px 22px;border-radius:5px;margin-top:12px}
-section{padding:42px 16px}
-.heading{text-align:center;margin:0 0 10px;font-size:28px}
-.sub{text-align:center;color:#697078;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;max-width:1100px;margin:auto}
-.card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 5px 18px #17202a12;text-align:center;padding-bottom:22px}
-.card img{width:100%;height:245px;object-fit:contain;background:#fff;padding:12px}
-.card h3{margin:12px 8px}
-.desc{color:#697078;font-size:14px;padding:0 14px;min-height:35px}
-.price{font-size:24px;color:#9a742e;font-weight:bold;margin:15px}
-.order{display:inline-block;background:var(--dark);color:white;text-decoration:none;padding:12px 20px;border-radius:5px}
-.order:hover{background:#304653}
-.luxe{background:#101820;color:white}
-.luxe .sub{color:#d0d0d0}
-.luxe .card{background:#1b2830;color:white;border:1px solid #3b4449}
-.luxe .card img{background:#f7f5f0}
-.luxe .desc{color:#d0d0d0}
+.btn{display:inline-block;background:var(--gold);color:#101820;text-decoration:none;font-weight:bold;padding:14px 28px;border-radius:6px;box-shadow:0 6px 20px rgba(214,179,106,0.3);transition:0.3s}
+.btn:hover{transform:translateY(-2px);background:#e2c37e}
+
+section{padding:60px 20px;max-width:1200px;margin:auto}
+.heading{text-align:center;margin:0 0 8px;font-size:32px;font-weight:800}
+.sub{text-align:center;color:#697078;margin:0 0 35px;font-size:16px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 10px 25px rgba(23,32,42,0.08);text-align:center;padding-bottom:24px;transition:0.3s;position:relative}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(23,32,42,0.15)}
+.card img{width:100%;height:260px;object-fit:cover;background:#fff}
+.card h3{margin:18px 10px 8px;font-size:20px}
+.desc{color:#666;font-size:14px;padding:0 16px;min-height:40px;line-height:1.5}
+.price{font-size:24px;color:#a47c32;font-weight:800;margin:15px 0}
+.order{display:inline-block;background:var(--dark);color:white;text-decoration:none;padding:12px 24px;border-radius:6px;font-weight:600;transition:0.3s}
+.order:hover{background:var(--gold);color:var(--dark)}
+
+.luxe-section{background:#101820;color:white;max-width:100%!important;padding:70px 20px}
+.luxe-section .heading, .luxe-section .sub{color:white}
+.luxe-section .sub{color:#aaa}
+.luxe-container{max-width:1200px;margin:auto}
+.luxe .card{background:#18232c;color:white;border:1px solid #2e3d48}
+.luxe .desc{color:#cbcbcb}
 .luxe .price{color:var(--gold)}
 .luxe .order{background:var(--gold);color:#101820}
-.badge{display:inline-block;background:#e9d7ad;color:#47381d;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold}
-.contact{text-align:center;line-height:2}
-footer{background:#101820;color:white;text-align:center;padding:24px 15px;font-size:14px}
+.luxe .order:hover{background:white}
+
+.badge{position:absolute;top:15px;right:15px;background:var(--gold);color:#101820;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:bold;letter-spacing:1px;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+
+.contact{text-align:center;background:white;border-radius:16px;padding:40px;box-shadow:0 10px 30px rgba(0,0,0,0.05);max-width:800px;margin:40px auto}
+.contact p{font-size:16px;margin:10px 0;color:#444}
+
+footer{background:#0a0f14;color:#aaa;text-align:center;padding:30px 15px;font-size:14px}
 footer span{color:var(--gold)}
+
+/* Modal Styles */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:1000;opacity:0;visibility:hidden;transition:0.3s backdrop-filter}
+.modal-overlay.active{opacity:1;visibility:visible}
+.modal{background:white;color:var(--dark);padding:35px;border-radius:16px;width:100%;max-width:400px;box-shadow:0 20px 40px rgba(0,0,0,0.3);transform:scale(0.9);transition:0.3s;position:relative}
+.modal-overlay.active .modal{transform:scale(1)}
+.modal h2{margin-top:0;margin-bottom:20px;text-align:center;color:var(--dark)}
+.close-modal{position:absolute;top:15px;right:20px;font-size:24px;cursor:pointer;background:none;border:none;color:#777}
+.form-group{margin-bottom:15px}
+.form-group label{display:block;margin-bottom:6px;font-weight:600;font-size:14px}
+.form-group input{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:14px;outline:none;transition:0.3s}
+.form-group input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,179,106,0.15)}
+.modal-btn{width:100%;background:var(--dark);color:white;padding:12px;border:none;border-radius:6px;font-weight:bold;cursor:pointer;font-size:16px;margin-top:10px;transition:0.3s}
+.modal-btn:hover{background:var(--gold);color:var(--dark)}
+.switch-text{text-align:center;margin-top:15px;font-size:14px;color:#666}
+.switch-text span{color:var(--gold);cursor:pointer;font-weight:bold}
+.user-status{display:flex;align-items:center;gap:10px}
 </style>
 </head>
 <body>
+
+<div id="devBanner" class="dev-banner">
+  🛠️ مرحباً بك أيها المطور! لديك صلاحيات إدارية كاملة على النظام.
+</div>
 
 <header>
   <div class="logo">RG VOYAGE</div>
@@ -57,95 +96,100 @@ footer span{color:var(--gold)}
   <a href="#classiques">Valises classiques</a>
   <a href="#luxe">Collection Luxe</a>
   <a href="#contact">Contact</a>
+  <button class="nav-btn auth-nav-btn" id="authNavBtn" onclick="openModal('login')">👤 Connexion / Inscription</button>
 </nav>
 
 <main>
 <div class="hero" id="accueil">
   <h1>Voyagez avec <span class="gold">élégance</span></h1>
-  <p>Découvrez notre sélection de valises pour vos voyages.<br>
-  Style, confort et praticité chez RG VOYAGE.</p>
+  <p>Découvrez notre sélection exclusive de valises haut de gamme pour tous vos déplacements.<br>Style, confort et robustesse chez RG VOYAGE.</p>
   <a class="btn" href="#classiques">Découvrir la collection</a>
 </div>
 
 <section id="classiques">
-  <h2 class="heading">Nos valises</h2>
-  <p class="sub">Une valise pour chaque voyage</p>
+  <h2 class="heading">Nos valises classiques</h2>
+  <p class="sub">Une valise résistante et élégante pour chaque voyage</p>
 
   <div class="grid">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise noire">
-      <h3>Valise noire</h3>
-      <p class="desc">Un modèle classique et élégant.</p>
+      <img src="https://images.unsplash.com/photo-1581553680327-1ff3ee78dde8?auto=format&fit=crop&w=700&q=80" alt="Valise noire rigide">
+      <h3>Valise Noire Rigide</h3>
+      <p class="desc">Modèle classique ultra-résistant avec roues multidirectionnelles à 360°.</p>
       <p class="price">650 DH</p>
-      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20noire%20a%20650%20DH">Commander</a>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20noire%20rigide%20a%20650%20DH">Commander</a>
     </article>
 
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Valise beige">
-      <h3>Valise beige</h3>
-      <p class="desc">Un style sobre pour vos déplacements.</p>
+      <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80" alt="Valise beige élégante">
+      <h3>Valise Beige Style</h3>
+      <p class="desc">Un design sobre et raffiné pour vos déplacements professionnels et loisirs.</p>
       <p class="price">650 DH</p>
       <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20beige%20a%20650%20DH">Commander</a>
     </article>
 
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise bleue">
-      <h3>Valise bleue</h3>
-      <p class="desc">Pratique pour les voyages et les vacances.</p>
+      <img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=700&q=80" alt="Valise bleue cabine">
+      <h3>Valise Bleue Cabine</h3>
+      <p class="desc">Format cabine pratique et léger, accepté par toutes les compagnies aériennes.</p>
       <p class="price">350 DH</p>
       <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20bleue%20a%20350%20DH">Commander</a>
     </article>
 
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Ensemble de bagages">
-      <h3>Set de 3 valises</h3>
-      <p class="desc">Trois tailles pour tous vos besoins.</p>
+      <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=700&q=80" alt="Set de 3 valises">
+      <h3>Set de 3 Valises</h3>
+      <p class="desc">Ensemble complet (Cabine, Moyenne, Grande) pour répondre à tous vos besoins en famille.</p>
       <p class="price">1 200 DH</p>
       <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20le%20set%20de%203%20valises%20a%201200%20DH">Commander</a>
     </article>
   </div>
 </section>
 
-<section class="luxe" id="luxe">
-  <h2 class="heading">Collection <span class="gold">Luxe</span></h2>
-  <p class="sub">L'élégance pour vos plus beaux voyages</p>
+<div class="luxe-section" id="luxe">
+  <div class="luxe-container">
+    <h2 class="heading">Collection <span class="gold">Luxe</span></h2>
+    <p class="sub">L'excellence et le prestige pour vos plus beaux voyages</p>
 
-  <div class="grid">
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise luxe noire">
-      <span class="badge">COLLECTION LUXE</span>
-      <h3>Luxury Black</h3>
-      <p class="desc">Design noir raffiné.</p>
-      <p class="price">Prix sur demande</p>
-      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Black.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
-    </article>
+    <div class="grid luxe">
+      <article class="card">
+        <span class="badge">LUXE</span>
+        <img src="https://images.unsplash.com/photo-1533591761608-13d8e5c46440?auto=format&fit=crop&w=700&q=80" alt="Luxury Black">
+        <h3>Luxury Black Edition</h3>
+        <p class="desc">Design noir mat haut de gamme, finitions en cuir véritable et serrure TSA intégrée.</p>
+        <p class="price">1 850 DH</p>
+        <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Black.%20Quel%20est%20son%20prix%3F">Commander</a>
+      </article>
 
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Valise luxe champagne">
-      <span class="badge">COLLECTION LUXE</span>
-      <h3>Luxury Champagne</h3>
-      <p class="desc">Une finition chic et moderne.</p>
-      <p class="price">Prix sur demande</p>
-      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Champagne.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
-    </article>
+      <article class="card">
+        <span class="badge">LUXE</span>
+        <img src="https://images.unsplash.com/photo-1512753360978-4b8312e680cf?auto=format&fit=crop&w=700&q=80" alt="Luxury Champagne">
+        <h3>Luxury Champagne</h3>
+        <p class="desc">Finition dorée champagne éclatante, coque en polycarbonate indestructible.</p>
+        <p class="price">1 950 DH</p>
+        <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Champagne.%20Quel%20est%20son%20prix%3F">Commander</a>
+      </article>
 
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Bagages luxe">
-      <span class="badge">COLLECTION LUXE</span>
-      <h3>Luxury Set</h3>
-      <p class="desc">Un ensemble élégant pour voyager.</p>
-      <p class="price">Prix sur demande</p>
-      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20le%20Luxury%20Set.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
-    </article>
+      <article class="card">
+        <span class="badge">LUXE</span>
+        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=700&q=80" alt="Luxury Set">
+        <h3>Luxury Tri-Set Prestige</h3>
+        <p class="desc">Le summum du raffinement : 3 valises de luxe coordonnées pour les grands voyageurs.</p>
+        <p class="price">3 400 DH</p>
+        <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20le%20Luxury%20Set.%20Quel%20est%20son%20prix%3F">Commander</a>
+      </article>
+    </div>
   </div>
-</section>
+</div>
 
-<section class="contact" id="contact">
-  <h2 class="heading">Contactez-nous</h2>
-  <p>📍 Magasin : Derb Ghallef, Casablanca</p>
-  <p>🚚 Contactez-nous pour les options de livraison.</p>
-  <p>📱 WhatsApp : 0661040473</p>
-  <a class="btn" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20voudrais%20des%20informations%20sur%20vos%20valises.">Écrire sur WhatsApp</a>
+<section>
+  <div class="contact" id="contact">
+    <h2 class="heading" style="margin-bottom:15px;">Contactez-nous</h2>
+    <p>📍 <strong>Magasin :</strong> Derb Ghallef, Casablanca</p>
+    <p>🚚 <strong>Livraison :</strong> Disponible partout au Maroc.</p>
+    <p>📱 <strong>WhatsApp :</strong> 0661040473</p>
+    <br>
+    <a class="btn" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20voudrais%20des%20informations%20sur%20vos%20valises.">Écrire sur WhatsApp</a>
+  </div>
 </section>
 </main>
 
@@ -154,5 +198,60 @@ footer span{color:var(--gold)}
   <p>© 2026 RG VOYAGE. Tous droits réservés.</p>
 </footer>
 
-</body>
-</html>
+<!-- Auth Modal -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal()">&times;</button>
+    
+    <!-- Login Form -->
+    <div id="loginFormContainer">
+      <h2 id="modalTitle">Connexion</h2>
+      <form onsubmit="handleAuth(event, 'login')">
+        <div class="form-group">
+          <label>Email (Gmail)</label>
+          <input type="email" id="loginEmail" placeholder="exemple@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="modal-btn">Se Connecter</button>
+      </form>
+      <div class="switch-text">
+        Vous n'avez pas de compte ? <span onclick="switchMode('register')">Créer un compte</span>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerFormContainer" style="display:none;">
+      <h2>Créer un compte</h2>
+      <form onsubmit="handleAuth(event, 'register')">
+        <div class="form-group">
+          <label>Nom complet</label>
+          <input type="text" id="regName" placeholder="Votre nom" required>
+        </div>
+        <div class="form-group">
+          <label>Email (Gmail)</label>
+          <input type="email" id="regEmail" placeholder="exemple@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input type="password" id="regPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="modal-btn">S'inscrire</button>
+      </form>
+      <div class="switch-text">
+        Vous avez déjà un compte ? <span onclick="switchMode('login')">Se connecter</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const devs = ["DOLASSdev@gmail.com", "aymenrguibi20@gmail.com"];
+
+function openModal(mode) {
+  document.getElementById('authModal').classList.add('active');
+  switchMode(mode);
+}
