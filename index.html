@@ -1,292 +1,158 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RG VOYAGE | Catalogue Complet - Derb Ghallef Casablanca</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; }
-        header { background: linear-gradient(135deg, #0b2545, #134074); color: #fff; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .section-title { margin: 40px 0 20px; color: #0b2545; font-size: 1.6rem; border-bottom: 2px solid #2a9d8f; padding-bottom: 8px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; padding-bottom: 20px; transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; background-color: #e2e8f0; }
-        .product-card h3 { margin: 15px 0 5px; color: #134074; }
-        .size-tag { display: inline-block; background-color: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px; }
-        .product-card p { color: #666; font-size: 0.95rem; padding: 0 15px; margin-bottom: 15px; }
-        .product-card .price { font-size: 1.3rem; font-weight: bold; color: #2a9d8f; margin-bottom: 15px; }
-        
-        /* Form style for order */
-        .order-form { padding: 0 15px 15px; text-align: left; }
-        .order-form label { display: block; font-size: 0.85rem; font-weight: bold; color: #134074; margin-bottom: 3px; }
-        .order-form input { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; }
-        
-        .btn-whatsapp { display: block; width: calc(100% - 30px); margin: 0 auto; background-color: #25d366; color: white; padding: 10px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.95rem; text-align: center; }
-        .btn-whatsapp:hover { background-color: #1ebc57; }
-        footer { background-color: #0b2545; color: #fff; text-align: center; padding: 20px; margin-top: 50px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>RG VOYAGE | Valises Premium</title>
+<style>
+:root{--dark:#101820;--gold:#d6b36a;--cream:#f7f4ed}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--dark)}
+header{background:var(--dark);color:white;padding:22px 15px;text-align:center}
+.logo{font-size:30px;letter-spacing:5px;color:var(--gold);font-weight:800}
+header p{margin-bottom:0;color:#ddd}
+nav{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:15px;background:#192630}
+nav a{color:white;text-decoration:none;font-size:14px}
+.hero{background:linear-gradient(120deg,#101820,#34454e);color:white;text-align:center;padding:65px 18px}
+.hero h1{font-size:clamp(30px,6vw,48px);margin:0 0 15px}
+.hero p{line-height:1.8;color:#e6e6e6}
+.gold{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#101820;text-decoration:none;font-weight:bold;padding:13px 22px;border-radius:5px;margin-top:12px}
+section{padding:42px 16px}
+.heading{text-align:center;margin:0 0 10px;font-size:28px}
+.sub{text-align:center;color:#697078;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;max-width:1100px;margin:auto}
+.card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 5px 18px #17202a12;text-align:center;padding-bottom:22px}
+.card img{width:100%;height:245px;object-fit:contain;background:#fff;padding:12px}
+.card h3{margin:12px 8px}
+.desc{color:#697078;font-size:14px;padding:0 14px;min-height:35px}
+.price{font-size:24px;color:#9a742e;font-weight:bold;margin:15px}
+.order{display:inline-block;background:var(--dark);color:white;text-decoration:none;padding:12px 20px;border-radius:5px}
+.order:hover{background:#304653}
+.luxe{background:#101820;color:white}
+.luxe .sub{color:#d0d0d0}
+.luxe .card{background:#1b2830;color:white;border:1px solid #3b4449}
+.luxe .card img{background:#f7f5f0}
+.luxe .desc{color:#d0d0d0}
+.luxe .price{color:var(--gold)}
+.luxe .order{background:var(--gold);color:#101820}
+.badge{display:inline-block;background:#e9d7ad;color:#47381d;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold}
+.contact{text-align:center;line-height:2}
+footer{background:#101820;color:white;text-align:center;padding:24px 15px;font-size:14px}
+footer span{color:var(--gold)}
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>🧳 RG VOYAGE</h1>
-        <p>Boutique de valises et bagages à Derb Ghallef, Casablanca</p>
-    </header>
+<header>
+  <div class="logo">RG VOYAGE</div>
+  <p>Votre voyage commence ici ✈️</p>
+</header>
 
-    <div class="container">
-        
-        <!-- Modèle 1 -->
-        <h2 class="section-title">Modèle Classique (Set 4 Pièces)</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=500" alt="Grande Valise">
-                    <h3>Grande Valise</h3>
-                    <span class="size-tag">L'kbira ga3</span>
-                    <p>Spacieuse et résistante.</p>
-                    <div class="price">600 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-1" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-1" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-1" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Grande Valise - 600 DH', '1')">Commander sur WhatsApp</a>
-            </div>
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#classiques">Valises classiques</a>
+  <a href="#luxe">Collection Luxe</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1581553680321-4fffae59febd?w=500" alt="Valise Moyenne">
-                    <h3>Valise Moyenne</h3>
-                    <span class="size-tag">Lli srar mnha</span>
-                    <p>Parfaite pour les séjours.</p>
-                    <div class="price">450 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-2" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-2" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-2" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Moyenne - 450 DH', '2')">Commander sur WhatsApp</a>
-            </div>
+<main>
+<div class="hero" id="accueil">
+  <h1>Voyagez avec <span class="gold">élégance</span></h1>
+  <p>Découvrez notre sélection de valises pour vos voyages.<br>
+  Style, confort et praticité chez RG VOYAGE.</p>
+  <a class="btn" href="#classiques">Découvrir la collection</a>
+</div>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1565026057447-b8899f290906?w=500" alt="Valise Small">
-                    <h3>Valise Small</h3>
-                    <span class="size-tag">Lli srar mnha</span>
-                    <p>Format pratique et léger.</p>
-                    <div class="price">350 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-3" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-3" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-3" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Small - 350 DH', '3')">Commander sur WhatsApp</a>
-            </div>
+<section id="classiques">
+  <h2 class="heading">Nos valises</h2>
+  <p class="sub">Une valise pour chaque voyage</p>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500" alt="Valise Cabine">
-                    <h3>Valise Cabine</h3>
-                    <span class="size-tag">Sghira ga3</span>
-                    <p>Idéale pour l'avion.</p>
-                    <div class="price">200 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-4" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-4" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-4" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Cabine - 200 DH', '4')">Commander sur WhatsApp</a>
-            </div>
-        </div>
+  <div class="grid">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise noire">
+      <h3>Valise noire</h3>
+      <p class="desc">Un modèle classique et élégant.</p>
+      <p class="price">650 DH</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20noire%20a%20650%20DH">Commander</a>
+    </article>
 
-        <!-- Modèle 2 -->
-        <h2 class="section-title">Modèle Rigide Vagues (Set 3 Pièces)</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1581553680321-4fffae59febd?w=500" alt="Grande Valise Vagues">
-                    <h3>Grande Valise Vagues</h3>
-                    <span class="size-tag">L'kbira</span>
-                    <p>Modèle résistant.</p>
-                    <div class="price">450 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-5" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-5" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-5" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Grande Valise Vagues - 450 DH', '5')">Commander sur WhatsApp</a>
-            </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Valise beige">
+      <h3>Valise beige</h3>
+      <p class="desc">Un style sobre pour vos déplacements.</p>
+      <p class="price">650 DH</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20beige%20a%20650%20DH">Commander</a>
+    </article>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1565026057447-b8899f290906?w=500" alt="Valise Moyenne Vagues">
-                    <h3>Valise Moyenne Vagues</h3>
-                    <span class="size-tag">L'wastaniya</span>
-                    <p>Format idéal.</p>
-                    <div class="price">350 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-6" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-6" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-6" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Moyenne Vagues - 350 DH', '6')">Commander sur WhatsApp</a>
-            </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise bleue">
+      <h3>Valise bleue</h3>
+      <p class="desc">Pratique pour les voyages et les vacances.</p>
+      <p class="price">350 DH</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20la%20valise%20bleue%20a%20350%20DH">Commander</a>
+    </article>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=500" alt="Valise Cabine Vagues">
-                    <h3>Valise Cabine Vagues</h3>
-                    <span class="size-tag">Ssghira ga3</span>
-                    <p>Légère et maniable.</p>
-                    <div class="price">250 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-7" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-7" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-7" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Cabine Vagues - 250 DH', '7')">Commander sur WhatsApp</a>
-            </div>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Ensemble de bagages">
+      <h3>Set de 3 valises</h3>
+      <p class="desc">Trois tailles pour tous vos besoins.</p>
+      <p class="price">1 200 DH</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20veux%20commander%20le%20set%20de%203%20valises%20a%201200%20DH">Commander</a>
+    </article>
+  </div>
+</section>
 
-        <!-- Modèle 3 -->
-        <h2 class="section-title">Modèle Luxe & Trousse (Set Complet)</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500" alt="Grande Valise Luxe">
-                    <h3>Grande Valise Luxe</h3>
-                    <span class="size-tag">L'kbira</span>
-                    <p>Élégante et ultra-résistante.</p>
-                    <div class="price">550 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-8" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-8" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-8" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Grande Valise Luxe - 550 DH', '8')">Commander sur WhatsApp</a>
-            </div>
+<section class="luxe" id="luxe">
+  <h2 class="heading">Collection <span class="gold">Luxe</span></h2>
+  <p class="sub">L'élégance pour vos plus beaux voyages</p>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1581553680321-4fffae59febd?w=500" alt="Valise Moyenne Luxe">
-                    <h3>Valise Moyenne Luxe</h3>
-                    <span class="size-tag">L'wastaniya</span>
-                    <p>Format de voyage moyen.</p>
-                    <div class="price">450 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-9" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-9" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-9" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Moyenne Luxe - 450 DH', '9')">Commander sur WhatsApp</a>
-            </div>
+  <div class="grid">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&fit=crop&w=700&q=80" alt="Valise luxe noire">
+      <span class="badge">COLLECTION LUXE</span>
+      <h3>Luxury Black</h3>
+      <p class="desc">Design noir raffiné.</p>
+      <p class="price">Prix sur demande</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Black.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
+    </article>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1565026057447-b8899f290906?w=500" alt="Valise Cabine Luxe">
-                    <h3>Valise Cabine Luxe</h3>
-                    <span class="size-tag">Ssghira ga3</span>
-                    <p>Acceptée en cabine.</p>
-                    <div class="price">350 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-10" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-10" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-10" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Valise Cabine Luxe - 350 DH', '10')">Commander sur WhatsApp</a>
-            </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80" alt="Valise luxe champagne">
+      <span class="badge">COLLECTION LUXE</span>
+      <h3>Luxury Champagne</h3>
+      <p class="desc">Une finition chic et moderne.</p>
+      <p class="price">Prix sur demande</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20la%20valise%20Luxury%20Champagne.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
+    </article>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Trousse Vanity Scocha">
-                    <h3>Trousse / Vanity (Scocha)</h3>
-                    <span class="size-tag">Accessoire</span>
-                    <p>Pour vos produits de beauté.</p>
-                    <div class="price">150 DH</div>
-                    <div class="order-form">
-                        <label>Nom & Prénom:</label>
-                        <input type="text" id="name-11" placeholder="Ex: Ahmed Alami">
-                        <label>Téléphone:</label>
-                        <input type="tel" id="phone-11" placeholder="Ex: 0612345678">
-                        <label>Adresse de livraison:</label>
-                        <input type="text" id="address-11" placeholder="Ville, Quartier...">
-                    </div>
-                </div>
-                <a href="#" class="btn-whatsapp" onclick="sendOrder('Trousse / Vanity (Scocha) - 150 DH', '11')">Commander sur WhatsApp</a>
-            </div>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Bagages luxe">
+      <span class="badge">COLLECTION LUXE</span>
+      <h3>Luxury Set</h3>
+      <p class="desc">Un ensemble élégant pour voyager.</p>
+      <p class="price">Prix sur demande</p>
+      <a class="order" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20suis%20interesse%20par%20le%20Luxury%20Set.%20Quel%20est%20son%20prix%3F">Demander le prix</a>
+    </article>
+  </div>
+</section>
 
-    </div>
+<section class="contact" id="contact">
+  <h2 class="heading">Contactez-nous</h2>
+  <p>📍 Magasin : Derb Ghallef, Casablanca</p>
+  <p>🚚 Contactez-nous pour les options de livraison.</p>
+  <p>📱 WhatsApp : 0661040473</p>
+  <a class="btn" href="https://wa.me/212661040473?text=Bonjour%20RG%20VOYAGE%2C%20je%20voudrais%20des%20informations%20sur%20vos%20valises.">Écrire sur WhatsApp</a>
+</section>
+</main>
 
-    <footer>
-        <p>📍 Notre Magasin : Derb Ghallef, Casablanca | Livraison disponible partout au Maroc</p>
-        <p>&copy; 2026 RG VOYAGE. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        function sendOrder(productName, id) {
-            const phoneOwner = "212661040473"; 
-            
-            const name = document.getElementById('name-' + id).value;
-            const phone = document.getElementById('phone-' + id).value;
-            const address = document.getElementById('address-' + id).value;
-
-            if(!name || !phone || !address) {
-                alert("3afak 3amer Smiya, Nمرة Telephone, w L'adresse 9bel ma t'commandé!");
-                return;
-            }
-
-            const text = `Bghit n'commandé had l'produit:%0A- *Produit:* ${productName}%0A- *Smiya:* ${name}%0A- *Tél:* ${phone}%0A- *Adresse:* ${address}`;
-            
-            const whatsappUrl = `https://wa.me/${phoneOwner}?text=${text}`;
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+<footer>
+  <p><span>RG VOYAGE</span> — Votre voyage commence ici</p>
+  <p>© 2026 RG VOYAGE. Tous droits réservés.</p>
+</footer>
 
 </body>
 </html>
