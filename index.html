@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RG VOYAGE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#172033}
+header{background:#102a43;color:white;padding:22px 15px;text-align:center}
+header h1{margin:0;color:#58d5ff}
+header p{margin-bottom:0}
+.hero{text-align:center;padding:45px 18px;background:linear-gradient(135deg,#102a43,#167d9a);color:white}
+.hero h2{font-size:30px}
+button{background:#087f8c;color:white;border:0;padding:13px 20px;border-radius:9px;font-size:16px}
+main{padding:20px;max-width:850px;margin:auto}
+.card{background:white;padding:20px;margin:15px 0;border-radius:14px;box-shadow:0 3px 12px #0001}
+input,select,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ccd4df;border-radius:8px;font-size:16px}
+footer{text-align:center;background:#102a43;color:white;padding:22px}
+</style>
+</head>
+<body>
+<header>
+<h1>🧳 RG VOYAGE</h1>
+<p>Votre voyage, notre passion ✈️</p>
+</header>
+<section class="hero">
+<h2>Découvrez nos valises et cadeaux</h2>
+<p>Choisissez vos articles et commandez facilement en ligne.</p>
+<a href="#commande"><button>Commander maintenant</button></a>
+</section>
+<main>
+<section class="card">
+<h2>🛍️ Nos produits</h2>
+<p>Découvrez notre sélection de valises, cadeaux et accessoires de voyage.</p>
+<p>📍 Notre magasin : Derb Ghallef, Casablanca</p>
+<p>💬 Contactez-nous pour connaître les prix et la disponibilité.</p>
+</section>
+<section class="card" id="commande">
+<h2>📦 Votre commande</h2>
+<form id="form">
+<label>Nom complet</label>
+<input id="nom" required placeholder="Votre nom">
+<label>Téléphone</label>
+<input id="tel" required type="tel" placeholder="Votre numéro">
+<label>Produit souhaité</label>
+<input id="produit" required placeholder="Nom du produit">
+<label>Quantité</label>
+<input id="quantite" type="number" min="1" value="1" required>
+<label>Adresse de livraison</label>
+<textarea id="adresse" required placeholder="Votre adresse"></textarea>
+<button type="submit">Envoyer la commande</button>
+</form>
+<p id="msg"></p>
+</section>
+</main>
+<footer>
+<p>RG VOYAGE 🧳</p>
+<p>Derb Ghallef, Casablanca</p>
+<p>© 2026 RG VOYAGE</p>
+</footer>
+<script>
+document.getElementById('form').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('msg').textContent='Votre commande est prête à être préparée. Contactez le magasin pour la confirmer.';
+});
+</script>
+</body>
+</html>
